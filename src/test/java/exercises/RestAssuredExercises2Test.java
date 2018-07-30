@@ -4,6 +4,12 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+
+import java.util.Arrays;
 
 import static io.restassured.RestAssured.given;
 
@@ -21,6 +27,7 @@ public class RestAssuredExercises2Test {
 			setBasePath("/api/f1").
 			build();
 	}
+
 	
 	/*******************************************************
 	 * Use junit-jupiter-params for @ParameterizedTest that
@@ -30,6 +37,15 @@ public class RestAssuredExercises2Test {
 	 ******************************************************/
 
 	//todo
+	@ParameterizedTest
+    @ValueSource(strings = "Monza")
+	public void checkparamscountry(String country){
+		given().pathParams("country",country).
+				when().
+				get("/circuits/{country}")
+		.then();
+
+	}
 
 	/*******************************************************
 	 * Use junit-jupiter-params for @ParameterizedTest that specifies for all races
