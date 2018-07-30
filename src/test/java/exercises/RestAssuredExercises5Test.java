@@ -52,8 +52,8 @@ public class RestAssuredExercises5Test {
 		
 		given().
 			spec(requestSpec).
-		when().
-		then();
+		when().get("/xml/speedrecords").
+		then().assertThat().body("speedRecords.car[3].@make",equalTo("Aston Martin"));
 	}
 	
 	/*******************************************************
