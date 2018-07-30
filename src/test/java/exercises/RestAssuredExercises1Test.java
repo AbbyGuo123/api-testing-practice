@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 
 
 public class RestAssuredExercises1Test {
@@ -124,8 +125,10 @@ public class RestAssuredExercises1Test {
 
         given().
                 spec(requestSpec).
-                when().
-
-                then();
+                when()
+                .get("/2014/circuits.json")
+                .then()
+                .body("MRData.CircuitTable.season",is("2014"))
+                .body(not(containsString("nurburgring")));
     }
 }
