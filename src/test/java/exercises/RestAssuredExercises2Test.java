@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
 
 
 public class RestAssuredExercises2Test {
@@ -59,8 +60,10 @@ public class RestAssuredExercises2Test {
 	//todo
     static Stream<Arguments> pitstopsProvider() {
         return Stream.of(
-                Arguments.of("race", "1=1"),
-                Arguments.of("pitstop", "2 = 3, 3 = 2, 4 = 2")
+                Arguments.of("1", "1"),
+                Arguments.of("2", "3"),
+				Arguments.of("3", "2"),
+				Arguments.of("4", "2")
         );
     }
 
@@ -88,13 +91,17 @@ public class RestAssuredExercises2Test {
 	 * /2015/1/drivers/max_verstappen/pitstops.json)
 	 * and verify the number of pit stops made
 	 ******************************************************/
-	
-	@Test
-	public void checkNumberOfPitstopsForMaxVerstappenIn2015() {
-		
+
+	@ParameterizedTest
+	@MethodSource("pitstopsProvider")
+	public void checkNumberOfPitstopsForMaxVerstappenIn2015(String path,String pitstops) {
 		given().
 			spec(requestSpec).
-		when().
-		then();
+				pathParams("path",path).
+		when().log().all().
+				get("/2015/{path}/drivers/max_verstappen/pitstops.json").
+		then().log().all()
+		.statusCode(HttpStatus.SC_OK)
+		.body("MRData.total",is(pitstops));
 	}
 }
