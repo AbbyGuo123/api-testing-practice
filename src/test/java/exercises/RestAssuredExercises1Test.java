@@ -89,7 +89,8 @@ public class RestAssuredExercises1Test {
                 get("/2014/1/circuits.json").
                 then().log().all()
                 .statusCode(HttpStatus.SC_OK)
-                .body("MRData.CircuitTable.season",is("2014"));
+                .body("MRData.CircuitTable.season",is("2014"))
+                .body("MRData.CircuitTable.Circuits[0].circuitId",is("albert_park"));
     }
 
     /***********************************************
