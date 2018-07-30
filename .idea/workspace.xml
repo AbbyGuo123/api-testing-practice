@@ -24,8 +24,8 @@
       <file leaf-file-name="RestAssuredExamples.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExamples.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="196" column="35" lean-forward="true" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
+            <state relative-caret-position="157">
+              <caret line="174" column="60" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +36,8 @@
       <file leaf-file-name="RestAssuredExercises4Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExercises4Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+            <state relative-caret-position="312">
+              <caret line="89" column="34" lean-forward="true" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -67,9 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FirstRaceOf2014</find>
-      <find>/incorrect</find>
-      <find>/2016/drivers</find>
       <find>/2014/1/circuits.json</find>
       <find>/2014/1/circuits</find>
       <find>silverstone</find>
@@ -96,6 +93,10 @@
       <find>/payments</find>
       <find>/oauth2/token</find>
       <find>preemptive</find>
+      <find>/2014/circuits.json</find>
+      <find>/2014/circuits.</find>
+      <find>ms</find>
+      <find>100</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -572,7 +573,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RestAssuredExercises4Test.checkNumberOfPayments">
+  <component name="RunManager" selected="JUnit.RestAssuredExercises4Test.checkResponseTimeFor2014CircuitList">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -589,29 +590,6 @@
       <option name="PACKAGE_NAME" value="exercises" />
       <option name="MAIN_CLASS_NAME" value="exercises.RestAssuredExercises2Test" />
       <option name="METHOD_NAME" value="checkNumberOfPitstopsForMaxVerstappenIn2015(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="RestAssuredExercises2Test.checkNumberOfPitstopsForMaxVerstappenIn2015" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api-testing-practice_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exercises.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="exercises" />
-      <option name="MAIN_CLASS_NAME" value="exercises.RestAssuredExercises2Test" />
-      <option name="METHOD_NAME" value="checkNumberOfPitstopsForMaxVerstappenIn2015" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -691,6 +669,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="RestAssuredExercises4Test.checkResponseTimeFor2014CircuitList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-testing-practice_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="exercises" />
+      <option name="MAIN_CLASS_NAME" value="exercises.RestAssuredExercises4Test" />
+      <option name="METHOD_NAME" value="checkResponseTimeFor2014CircuitList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -730,19 +731,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.RestAssuredExercises2Test.checkNumberOfPitstopsForMaxVerstappenIn2015" />
       <item itemvalue="JUnit.RestAssuredExercises2Test.checkNumberOfPitstopsForMaxVerstappenIn2015 (1)" />
       <item itemvalue="JUnit.RestAssuredExercises3Test.useExtractedDriverId" />
       <item itemvalue="JUnit.RestAssuredExercises3Test.useResponseSpecification" />
       <item itemvalue="JUnit.RestAssuredExercises4Test.checkNumberOfPayments" />
+      <item itemvalue="JUnit.RestAssuredExercises4Test.checkResponseTimeFor2014CircuitList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RestAssuredExercises4Test.checkResponseTimeFor2014CircuitList" />
         <item itemvalue="JUnit.RestAssuredExercises4Test.checkNumberOfPayments" />
         <item itemvalue="JUnit.RestAssuredExercises3Test.useResponseSpecification" />
         <item itemvalue="JUnit.RestAssuredExercises3Test.useExtractedDriverId" />
         <item itemvalue="JUnit.RestAssuredExercises2Test.checkNumberOfPitstopsForMaxVerstappenIn2015 (1)" />
-        <item itemvalue="JUnit.RestAssuredExercises2Test.checkNumberOfPitstopsForMaxVerstappenIn2015" />
       </list>
     </recent_temporary>
   </component>
@@ -757,14 +758,11 @@
       <option name="presentableId" value="Default" />
       <updated>1532917299158</updated>
       <workItem from="1532917302440" duration="9187000" />
-      <workItem from="1532930899172" duration="9111000" />
+      <workItem from="1532930899172" duration="10309000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RestAssuredExercises3Test_useExtractedDriverId - 2018.07.30 at 15h 40m 27s.xml">
-      <configuration name="RestAssuredExercises3Test.useExtractedDriverId" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RestAssuredExercises3Test_useExtractedDriverId - 2018.07.30 at 15h 41m 01s.xml">
       <configuration name="RestAssuredExercises3Test.useExtractedDriverId" configurationId="JUnit" />
     </history-entry>
@@ -792,9 +790,12 @@
     <history-entry file="RestAssuredExercises4Test_checkNumberOfPayments - 2018.07.30 at 19h 26m 44s.xml">
       <configuration name="RestAssuredExercises4Test.checkNumberOfPayments" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RestAssuredExercises4Test_checkNumberOfPayments - 2018.07.30 at 19h 27m 00s.xml">
+      <configuration name="RestAssuredExercises4Test.checkNumberOfPayments" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18298000" />
+    <option name="totallyTimeSpent" value="19496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -810,7 +811,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40151516" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40151516" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -823,7 +824,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39935064" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32900432" />
@@ -872,14 +873,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExercises4Test.java</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="10" />
     </breakpoint-manager>
   </component>
@@ -1020,16 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExamples.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="196" column="35" lean-forward="true" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExercises5Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1420">
@@ -1061,10 +1044,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExamples.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="174" column="60" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/exercises/RestAssuredExercises4Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+        <state relative-caret-position="312">
+          <caret line="89" column="34" lean-forward="true" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
         </state>
       </provider>
     </entry>
