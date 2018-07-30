@@ -5,6 +5,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -98,9 +100,12 @@ public class RestAssuredExercises5Test {
 	@Test
 	public void checkTwoRecordsHaveBeenSetByCarsWhoseMakeEndOnBenz() {
 
-		given().
-				spec(requestSpec).
-				when().get("/xml/speedrecords").
-				then().assertThat().body("cars.car.findAll{it.@make.endsWith('Benz')}.size()",equalTo(2));
+//		List<String> list = given().
+//				spec(requestSpec).
+//				when().get("/xml/speedrecords")
+//				.getBody().jsonPath().getString("MRData.DriverTable.Drivers[8].driverId");
+////				then().assertThat().body("**.find{it.@make.endswith('Benz')}.size()",equalTo(2));
+//
+//
 	}
 }
