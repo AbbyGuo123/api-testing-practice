@@ -2,6 +2,7 @@ package exercises;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
+import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
 
 
 public class RestAssuredExercises2Test {
@@ -41,7 +43,7 @@ public class RestAssuredExercises2Test {
 	//todo
     static Stream<Arguments> countryProvider() {
         return Stream.of(
-                Arguments.of("country", "Monza")
+                Arguments.of("monza")
         );
     }
 
@@ -55,6 +57,12 @@ public class RestAssuredExercises2Test {
 	 ******************************************************/
 
 	//todo
+    static Stream<Arguments> pitstopsProvider() {
+        return Stream.of(
+                Arguments.of("race", "1=1"),
+                Arguments.of("pitstop", "2 = 3, 3 = 2, 4 = 2")
+        );
+    }
 
 	/*******************************************************
 	 * Request data for a specific circuit (for Monza this 
@@ -64,12 +72,14 @@ public class RestAssuredExercises2Test {
 
     @ParameterizedTest
     @MethodSource("countryProvider")
-	public void checkCountryForCircuit() {
+	public void checkCountryForCircuit(String country) {
 		
 		given().
-			spec(requestSpec).
-		when().
-		then();
+				spec(requestSpec).
+                pathParams("country",country).log().all().
+		when().get("/circuits/{country}.json")
+                .then()
+                .statusCode(HttpStatus.SC_OK);
 	}
 	
 	/*******************************************************
