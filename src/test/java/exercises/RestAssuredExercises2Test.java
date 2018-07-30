@@ -5,11 +5,13 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.given;
 
@@ -37,17 +39,15 @@ public class RestAssuredExercises2Test {
 	 ******************************************************/
 
 	//todo
-	@ParameterizedTest
-    @ValueSource(strings = "Monza")
-	public void checkparamscountry(String country){
-		given().pathParams("country",country).
-				when().
-				get("/circuits/{country}")
-		.then();
+    static Stream<Arguments> countryProvider() {
+        return Stream.of(
+                Arguments.of("country", "Monza")
+        );
+    }
 
-	}
 
-	/*******************************************************
+
+    /*******************************************************
 	 * Use junit-jupiter-params for @ParameterizedTest that specifies for all races
 	 * (adding the first four suffices) in 2015 how many  
 	 * pit stops Max Verstappen made
@@ -61,8 +61,9 @@ public class RestAssuredExercises2Test {
 	 * is /circuits/monza.json)
 	 * and check the country this circuit can be found in
 	 ******************************************************/
-	
-	@Test
+
+    @ParameterizedTest
+    @MethodSource("countryProvider")
 	public void checkCountryForCircuit() {
 		
 		given().
