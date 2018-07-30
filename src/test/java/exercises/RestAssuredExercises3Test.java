@@ -83,8 +83,10 @@ public class RestAssuredExercises3Test {
 
         given().
                 spec(requestSpec).
-                when().
-                then();
+                when().get("/2014/1/circuits.json").
+                then().spec(responseSpec)
+                .and()
+                .body("MRData.CircuitTable.Circuits[0].Location.locality",is("Melbourne"));
     }
 
     /*******************************************************
