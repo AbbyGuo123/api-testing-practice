@@ -193,7 +193,7 @@ public class RestAssuredExamples {
         given().
                 when().
                 get("http://api.zippopotam.us/us/90210").
-                then().
+                then().log().all().
                 spec(responseSpec).
                 and().
                 body("country", is("United States"));

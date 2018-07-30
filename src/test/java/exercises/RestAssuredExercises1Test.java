@@ -1,11 +1,14 @@
 package exercises;
 
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 
 public class RestAssuredExercises1Test {
@@ -32,8 +35,10 @@ public class RestAssuredExercises1Test {
 
         given().
                 spec(requestSpec).
-                when().
-                then();
+                when().log().all().
+                get("/2016/drivers.json").
+                then().log().all()
+                .statusCode(HttpStatus.SC_OK);
     }
 
     /*******************************************************
@@ -47,7 +52,9 @@ public class RestAssuredExercises1Test {
         given().
                 spec(requestSpec).
                 when().
-                then();
+                get("/api/f1/incorrect.json").
+                then().log().all()
+                .statusCode(HttpStatus.SC_NOT_FOUND);
     }
 
     /*******************************************************
@@ -61,7 +68,9 @@ public class RestAssuredExercises1Test {
         given().
                 spec(requestSpec).
                 when().
-                then();
+                get("/2016/drivers.json").
+                then()
+                .contentType(ContentType.JSON);
     }
 
     /***********************************************
@@ -77,7 +86,10 @@ public class RestAssuredExercises1Test {
         given().
                 spec(requestSpec).
                 when().
-                then();
+                get("/2014/1/circuits.json").
+                then().log().all()
+                .statusCode(HttpStatus.SC_OK)
+                .body("MRData.CircuitTable.season",is("2014"));
     }
 
     /***********************************************
